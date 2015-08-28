@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile='Immersive' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+  <head>
+    <meta content='FormulaOneRaceCar.x3d' name='title'/>
+    <meta content='A FormulaOne Race Car running in a predefined path' name='description'/>
+    <meta content='Athanasopoulos,Vasileios' name='creator'/>
+    <meta content='2 August 2002' name='created'/>
+    <meta content='13 January 2014' name='modified'/>
+    <meta content='Formula One Race Car' name='subject'/>
+    <meta content='http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/FormulaOneRaceCar.x3d' name='identifier'/>
+    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
+  </head>
+  <Scene>
+    <Viewpoint description='Formula One Race Car' orientation='-1 1 1 1' position='6 8 8'/>
+    <DirectionalLight direction='5 0 0'/>
+    <Viewpoint description='Bottom' orientation='1 0 0 1.57' position='0 -25 -8'/>
+    <Background groundColor='0 0 0' skyColor='0 0 1'/>
+    <Transform DEF='CAR' rotation='0 1 0 -1.57'>
+      <Group DEF='ViewpointGroup'>
+        <Group>
+          <Viewpoint description='Front' orientation='0 1 0 1.57' position='10 2 0'/>
+          <Viewpoint description='Right' position='0 2 10'/>
+          <Viewpoint description='Left' orientation='0 1 0 3.14' position='0 1.5 -14'/>
+          <Viewpoint description='Back' orientation='0 1 0 -1.57' position='-10 0.85 0'/>
+          <Viewpoint description='Top' orientation='1 0 0 -1.57' position='0 15 0.5'/>
+        </Group>
+        <WorldInfo info='"null node"'/>
+      </Group>
+      <Group>
+        <Transform DEF='FORMULA'>
+          <Transform rotation='1 0 0 -1.57'>
+            <!-- "BACK WHEELS & AXIS" -->
+            <Group>
+              <Transform rotation='1 0 0 1.57' translation='0 -2.8 0'>
+                <Group>
+                  <Transform DEF='BACK'>
+                    <Transform DEF='wheel1' rotation='0 0 1 1.57' translation='1.5 0 0'>
+                      <!-- "OUTER WHEEL CYLINDER" -->
+                      <Shape DEF='elastic'>
+                        <Appearance>
+                          <Material diffuseColor='0 0 0'/>
+                        </Appearance>
+                        <Cylinder height='0.92' radius='0.65'/>
+                      </Shape>
+                      <!-- "INNER WHEEL CYLINDER" -->
+                      <Shape>
+                        <Appearance>
+                          <Material diffuseColor='.5 .5 .5'/>
+                        </Appearance>
+                        <Cylinder height='.92' radius='.45'/>
+                      </Shape>
+                    </Transform>
+                    <Transform translation='1.912 0 0'>
+                      <Shape DEF='rad'>
+                        <Appearance>
+                          <Material/>
+                        </Appearance>
+                        <Box size='0.1 0.90 0.05'/>
+                      </Shape>
+                    </Transform>
+                    <Transform rotation='1 0 0 1.57' translation='1.912 0 0'>
+                      <Shape>
+                        <Appearance>
+                          <Material/>
+                        </Appearance>
+                        <Box size='0.1 0.90 0.05'/>
+                      </Shape>
+                    </Transform>
+                    <Transform DEF='wheel2' rotation='0 0 1 1.57' translation='-1.5 0 0'>
+                      <!-- "OUTER WHEEL CYLINDER" -->
+                      <Shape USE='elastic'/>
+                      <!-- "INNER WHEEL CYLINDER" -->
+                      <Shape>
+                        <Appearance>
+                          <Material diffuseColor='.5 .5 .5'/>
+                        </Appearance>
+                        <Cylinder height='.92' radius='.45'/>
+                      </Shape>
+                    </Transform>
+                    <Transform translation='-1.912 0 0'>
+                      <Shape USE='rad'/>
+                    </Transform>
+                    <Transform rotation='1 0 0 1.57' translation='-1.912 0 0'>
+                      <Shape>
+                        <Appearance>
+                          <Material/>
+                        </Appearance>
+                        <Box size='0.1 0.90 0.05'/>
+                      </Shape>
+                    </Transform>
+                    <Transform DEF='axis1' rotation='0 0 1 1.57'>
+                      <Shape>
+                        <Appearance>
+                          <Material diffuseColor='0 0 0'/>
+                        </Appearance>
+                        <Cylinder height='3.96' radius='.12'/>
+                      </Shape>
+                    </Transform>
+                  </Transform>
+                  <TimeSensor DEF='CLOCK1' cycleInterval='2' loop='true'/>
+                  <OrientationInterpolator DEF='POS1' key='0 0.5 1' keyValue='1 0 0 0 1 0 0 -3.14 1 0 0 -6.28'/>
+                </Group>
+                <ROUTE fromField='fraction_changed' fromNode='CLOCK1' toField='set_fraction' toNode='POS1'/>
+                <ROUTE fromField='value_changed' fromNode='POS1' toField='set_rotation' toNode='BACK'/>
+              </Transform>
+            </Group>
+            <!-- "FRONT WHEELS & AXIS" -->
+            <Group>
+              <Transform rotation='1 0 0 1.57' translation='0 2.65 0'>
+                <Group>
+                  <Transform DEF='FRONT'>
+                    <Transform DEF='wheel3' rotation='0 0 1 1.57' translation='1.5 0 0'>
+                      <!-- "OUTER WHEEL CYLINDER" -->
+                      <Shape DEF='elastic1'>
+                        <Appearance>
+                          <Material diffuseColor='0 0 0'/>
+                        </Appearance>
+                        <Cylinder height='0.92' radius='0.65'/>
+                      </Shape>
+                      <!-- "INNER WHEEL CYLINDER" -->
+                      <Shape>
+                        <Appearance>
+                          <Material diffuseColor='.5 .5 .5'/>
+                        </Appearance>
+                        <Cylinder height='.92' radius='.45'/>
+                      </Shape>
+                    </Transform>
+                    <Transform translation='1.912 0 0'>
+                      <Shape USE='rad'/>
+                    </Transform>
+                    <Transform rotation='1 0 0 1.57' translation='1.912 0 0'>
+                      <Shape>
+                        <Appearance>
+                          <Material/>
+                        </Appearance>
+                        <Box size='0.1 .90 .05'/>
+                      </Shape>
+                    </Transform>
+                    <Transform DEF='wheel4' rotation='0 0 1 1.57' translation='-1.5 0 0'>
+                      <!-- "OUTER WHEEL CYLINDER" -->
+                      <Shape USE='elastic'/>
+                      <!-- "INNER WHEEL CYLINDER" -->
+                      <Shape>
+                        <Appearance>
+                          <Material diffuseColor='.5 .5 .5'/>
+                        </Appearance>
+                        <Cylinder height='.92' radius='.45'/>
+                      </Shape>
+                    </Transform>
+                    <Transform translation='-1.912 0 0'>
+                      <Shape USE='rad'/>
+                    </Transform>
+                    <Transform rotation='1 0 0 1.57' translation='-1.912 0 0'>
+                      <Shape>
+                        <Appearance>
+                          <Material/>
+                        </Appearance>
+                        <Box size='0.1 .90 .05'/>
+                      </Shape>
+                    </Transform>
+                    <Transform DEF='axis2' rotation='0 0 1 1.57'>
+                      <Shape>
+                        <Appearance>
+                          <Material diffuseColor='0 0 0'/>
+                        </Appearance>
+                        <Cylinder height='3.96' radius='.12'/>
+                      </Shape>
+                    </Transform>
+                  </Transform>
+                  <TimeSensor DEF='CLOCK2' cycleInterval='2' loop='true'/>
+                  <OrientationInterpolator DEF='POS2' key='0 0.5 1' keyValue='1 0 0 0 1 0 0 -3.14 1 0 0 -6.28'/>
+                  <ROUTE fromField='fraction_changed' fromNode='CLOCK2' toField='set_fraction' toNode='POS2'/>
+                  <ROUTE fromField='value_changed' fromNode='POS2' toField='set_rotation' toNode='FRONT'/>
+                </Group>
+              </Transform>
+            </Group>
+            <!-- "CAR BODY" -->
+            <Group>
+              <!-- "CAR BODY" -->
+              <Transform scale='1 4 0.5'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='1 0 0'/>
+                  </Appearance>
+                  <Sphere/>
+                </Shape>
+                <Transform rotation='1 0 0 0' translation='0 0.2 0.976'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='0.2 1 0' transparency='.5'/>
+                      <ImageTexture DEF='nplogo' url='"nplogo.jpg" "http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/nplogo.jpg"'/>
+                    </Appearance>
+                    <Box size='0.7 .2 .0000001'/>
+                  </Shape>
+                </Transform>
+              </Transform>
+              <Group/>
+              <!-- "PILOT'S COVER SHELL" -->
+              <Transform DEF='COVER' center='0 0 0.535' scale='.5 0.9 0.3' translation='0 -1 0'>
+                <Shape>
+                  <Appearance>
+                    <Material transparency='0.55'/>
+                  </Appearance>
+                  <Sphere radius='1.3'/>
+                </Shape>
+                <CylinderSensor DEF='COVERSENS' description='touch to activate' diskAngle='0.262' maxAngle='3.57'/>
+              </Transform>
+              <ROUTE fromField='rotation_changed' fromNode='COVERSENS' toField='set_rotation' toNode='COVER'/>
+              <!-- "PILOT'S HEAD" -->
+              <Transform translation='0 -1.3 0.5'>
+                <Viewpoint description='Driver' orientation='1 0 0 1.350' position='0 0.25 -0.015'/>
+                <Transform rotation='1 0 0 1.67' translation='0 0.7 -0.2'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='1 0 0' transparency='.5'/>
+                      <ImageTexture url='"front.jpg" "http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/front.jpg"'/>
+                    </Appearance>
+                    <Box size='0.9 0.8 0.01'/>
+                  </Shape>
+                </Transform>
+                <Transform rotation='1 0 0 1.67' translation='0 0.701 -0.2'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='1 0 0'/>
+                    </Appearance>
+                    <Box size='0.9 0.8 0.01'/>
+                  </Shape>
+                </Transform>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='1 0 0'/>
+                  </Appearance>
+                  <Sphere radius='0.25'/>
+                </Shape>
+              </Transform>
+              <!-- "FRONT-HORIZONTAL PANEL-TEXTURES " -->
+              <Transform translation='0 3.80 -0.3'>
+                <!-- "FRONT (HORIZONTAL) PANEL" -->
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='1 0 0'/>
+                  </Appearance>
+                  <Box size='3.94 .6 .03'/>
+                </Shape>
+                <!-- "FRONT-RIGHT (OUTER)VERTICAL PANEL" -->
+                <Transform translation='0.35 -0.2 0.15'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='0.2 1 0'/>
+                    </Appearance>
+                    <Box size='.03 0.16 0.28'/>
+                  </Shape>
+                </Transform>
+                <!-- "FRONT-LEFT (OUTER)VERTICAL PANEL -->
+                <Transform translation='-0.35 -0.2 0.15'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='0.2 1 0'/>
+                    </Appearance>
+                    <Box size='.03 0.16 0.28'/>
+                  </Shape>
+                </Transform>
+                <!-- "BACK TEXT" -->
+                <Transform rotation='0 0 1 -3.14' translation='1.40 -7.20 1.05'>
+                  <Transform rotation='1 0 0 0.266'>
+                    <Shape>
+                      <Appearance>
+                        <Material diffuseColor='1 1 0'/>
+                      </Appearance>
+                      <Text string='"MV-4204"'>
+                        <FontStyle size='.8' style='BOLD'/>
+                      </Text>
+                    </Shape>
+                  </Transform>
+                </Transform>
+                <!-- "FRONT RIGHT TEXT" -->
+                <Transform rotation='0 0 1 -3.14' translation='2.2 0.2 0'>
+                  <Transform translation='.5 .020 0.05'>
+                    <Shape>
+                      <Appearance>
+                        <Material diffuseColor='1 1 0'/>
+                      </Appearance>
+                      <Text string='"VRML"'>
+                        <FontStyle size='.4' style='BOLD'/>
+                      </Text>
+                    </Shape>
+                  </Transform>
+                </Transform>
+                <!-- "FRONT LEFT TEXT" -->
+                <Transform rotation='0 0 1 3.14' translation='-2.1 0.2 0'>
+                  <Transform translation='-1.5 0.01 0.05'>
+                    <Shape>
+                      <Appearance>
+                        <Material diffuseColor='1 1 0'/>
+                      </Appearance>
+                      <Text string='"VRML"'>
+                        <FontStyle size='.4' style='BOLD'/>
+                      </Text>
+                    </Shape>
+                  </Transform>
+                </Transform>
+                <!-- "FRONT-RIGHT (INNER)VERTICAL PANEL -->
+                <Transform translation='1.95 0.01 0.05'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='0.2 1 0'/>
+                    </Appearance>
+                    <Box size='0.03 .6 .1'/>
+                  </Shape>
+                </Transform>
+                <!-- "FRONT-LEFT (INNER)VERTICAL PANEL -->
+                <Transform translation='-1.95 0.01 0.05'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='0.2 1 0'/>
+                    </Appearance>
+                    <Box size='0.03 .6 .1'/>
+                  </Shape>
+                </Transform>
+              </Transform>
+              <!-- "BACK (INCLINED) UPPER PANEL" -->
+              <Transform rotation='1 0 0 -0.2' translation='0 -3.57 0.75'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='1 0 0'/>
+                  </Appearance>
+                  <Box size='3.94 0.8 0.04'/>
+                </Shape>
+                <Transform translation='1.95 0 0.1'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='0.2 1 0'/>
+                    </Appearance>
+                    <Box size='0.04 0.8 0.2'/>
+                  </Shape>
+                </Transform>
+                <Transform translation='-1.95 0 0.1'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='0.2 1 0'/>
+                    </Appearance>
+                    <Box size='0.04 0.8 0.2'/>
+                  </Shape>
+                </Transform>
+              </Transform>
+              <!-- "HORIZONTAL PART OF THE CAR" -->
+              <Transform rotation='0 0 1 1.57' scale='1 1 0.05' translation='0 -0.15 0'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='.2 1 0'/>
+                    <ImageTexture USE='nplogo'/>
+                  </Appearance>
+                  <Cylinder height='3.95' radius='1.9'/>
+                </Shape>
+                <!-- "RIGHT TEXT" -->
+                <Transform rotation='0 0 1 -3.14' translation='0.6 1.65 2'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='1 1 0'/>
+                    </Appearance>
+                    <Text string='"NPS"'>
+                      <FontStyle size='.8' style='BOLD'/>
+                    </Text>
+                  </Shape>
+                </Transform>
+                <!-- "LEFT TEXT" -->
+                <Transform rotation='0 0 1 -6.28' translation='-0.8 -1.65 2'>
+                  <Shape>
+                    <Appearance>
+                      <Material diffuseColor='1 1 0'/>
+                    </Appearance>
+                    <Text string='"NPS"'>
+                      <FontStyle size='.8' style='BOLD'/>
+                    </Text>
+                  </Shape>
+                </Transform>
+              </Transform>
+              <!-- "BACK-LEFT VERTICAL PANEL" -->
+              <Transform translation='-0.42 -3.4 0.35'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0.2 1 0'/>
+                  </Appearance>
+                  <Box size='.06 0.26 0.7'/>
+                </Shape>
+              </Transform>
+              <!-- "BACK-RIGHT VERTICAL PANEL" -->
+              <Transform translation='0.42 -3.4 0.35'>
+                <Shape>
+                  <Appearance>
+                    <Material diffuseColor='0.2 1 0'/>
+                  </Appearance>
+                  <Box size='.06 0.26 0.7'/>
+                </Shape>
+              </Transform>
+              <!-- "EXHAUST" -->
+              <Transform translation='0.2 -3.88 0'>
+                <Shape DEF='exhaust'>
+                  <Appearance>
+                    <Material diffuseColor='0 0 0'/>
+                  </Appearance>
+                  <Cylinder height='.25' radius='.05'/>
+                </Shape>
+              </Transform>
+              <!-- "EXHAUST" -->
+              <Transform translation='-0.2 -3.88 0'>
+                <Shape USE='exhaust'/>
+              </Transform>
+            </Group>
+          </Transform>
+          <Sound DEF='Engine1'>
+            <AudioClip DEF='SOUNDSOURCE1' description='V1' loop='true' url='"f1.wav" "http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/f1.wav"'/>
+          </Sound>
+          <Sound DEF='Engine2'>
+            <AudioClip DEF='SOUNDSOURCE2' description='V2' loop='true' url='"f2.wav" "http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/f2.wav"'/>
+          </Sound>
+          <Sound DEF='Engine3'>
+            <AudioClip DEF='SOUNDSOURCE3' description='V3' loop='true' url='"f3.wav" "http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/f3.wav"'/>
+          </Sound>
+        </Transform>
+        <Script DEF='MOVE'>
+          <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
+          <field accessType='outputOnly' name='value_changed' type='SFVec3f'/>
+          <field accessType='initializeOnly' name='radius' type='SFFloat' value='10'/>
+          <field accessType='initializeOnly' name='turns' type='SFFloat' value='1'/>
+          <![CDATA[
+ecmascript:
+
+function set_fraction (fraction,eventTime)
+{
+    value_changed[0]=radius*Math.sin(turns*fraction*6.28);
+    value_changed[1]=0;
+    value_changed[2]=radius*Math.cos(turns*fraction*6.28);
+ }
+]]>
+        </Script>
+        <Script DEF='TURN'>
+          <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
+          <field accessType='outputOnly' name='value_changed' type='SFRotation'/>
+          <field accessType='initializeOnly' name='radius' type='SFFloat' value='1'/>
+          <field accessType='initializeOnly' name='turns' type='SFFloat' value='1'/>
+          <![CDATA[
+ecmascript:
+
+function set_fraction (fraction,eventTime)
+{
+    value_changed[0]=0;
+    value_changed[1]=1;
+    value_changed[2]=0;
+    value_changed[3]=fraction*6.28;
+ }
+]]>
+        </Script>
+        <PlaneSensor DEF='DRAG' description='touch to activate'/>
+        <TimeSensor DEF='CLOCK' cycleInterval='8.0' loop='true'/>
+      </Group>
+      <ROUTE fromField='translation_changed' fromNode='DRAG' toField='set_translation' toNode='CAR'/>
+      <ROUTE fromField='fraction_changed' fromNode='CLOCK' toField='set_fraction' toNode='MOVE'/>
+      <ROUTE fromField='value_changed' fromNode='MOVE' toField='set_translation' toNode='CAR'/>
+      <ROUTE fromField='fraction_changed' fromNode='CLOCK' toField='set_fraction' toNode='TURN'/>
+      <ROUTE fromField='value_changed' fromNode='TURN' toField='set_rotation' toNode='FORMULA'/>
+    </Transform>
+  </Scene>
+</X3D>

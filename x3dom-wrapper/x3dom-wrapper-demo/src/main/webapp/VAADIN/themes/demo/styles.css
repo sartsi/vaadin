@@ -1,0 +1,78 @@
+.v-assistive-device-only {
+	position: absolute;
+	top: -2000px;
+	left: -2000px;
+	width: 10px;
+	overflow: hidden;
+}
+
+.v-radiobutton {
+	-webkit-user-select: none;
+}
+
+@-webkit-keyframes v-notification-animate-out {
+		100% {
+		opacity: 0;
+	}
+	}
+
+@-moz-keyframes v-notification-animate-out {
+		100% {
+		opacity: 0;
+	}
+	}
+
+@keyframes v-notification-animate-out {
+		100% {
+		opacity: 0;
+	}
+	}
+
+.v-vaadin-version:after {
+	content: "7.3.9";
+}
+
+.v-generated-body {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.v-modal-window-open {
+	overflow: hidden;
+}
+
+@font-face {
+	font-family: FontAwesome;
+	src: url(../base/fonts/fontawesome-webfont.eot);
+	src: url(../base/fonts/fontawesome-webfont.eot?#iefix) format("embedded-opentype"), url(../base/fonts/fontawesome-webfont.woff) format("woff"), url(../base/fonts/fontawesome-webfont.ttf) format("truetype"), url(../base/fonts/fontawesome-webfont.svg) format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.FontAwesome {
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+}
+
+/** sprite: verticals; sprite-image: url(common/img/vertical-sprites.png); sprite-layout: vertical */
+
+/** sprite: horizontals; sprite-image: url(common/img/horizontal-sprites.png); sprite-layout: horizontal */
+
+/** sprite: black-verticals; sprite-image: url(common/img/black-vertical-sprites.png); sprite-layout: vertical; sprite-matte-color: #1e2022 */
+
+/** sprite: black-horizontals; sprite-image: url(common/img/black-horizontal-sprites.png); sprite-layout: horizontal; sprite-matte-color: #1e2022 */
+
+/** sprite: buttons; sprite-image: url(button/img/button-sprites.png); sprite-layout: vertical */
+
+/** sprite: black-buttons; sprite-image: url(button/img/black-button-sprites.png); sprite-layout: vertical */
+
+.v-generated-body {
+	background: #f5f5f5;
+}
