@@ -1,0 +1,19 @@
+@import "../reindeer/reindeer.scss";
+
+
+.demo {
+
+  @include reindeer;
+
+  .redItem {
+	color: red;
+  }
+
+  .greenItem {
+	color: green;
+  }
+
+  .blueItem {
+	color: blue;
+  }
+}

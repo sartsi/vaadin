@@ -111,6 +111,12 @@
         <scope>compile</scope>
       </dependency>
       <dependency>
+        <groupId>org.vaadin.addons</groupId>
+        <artifactId>native-select-ext-addon</artifactId>
+        <version>${project.version}</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
         <groupId>com.vaadin</groupId>
         <artifactId>vaadin-push</artifactId>
         <version>${vaadin.version}</version>
@@ -142,5 +148,6 @@
   </dependencyManagement>
   <modules>
     <module>x3dom-wrapper</module>
+    <module>native-select-ext</module>
   </modules>
 </project>
