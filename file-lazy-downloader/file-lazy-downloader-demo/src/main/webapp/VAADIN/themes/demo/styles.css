@@ -29,7 +29,7 @@
 	}
 
 .v-vaadin-version:after {
-	content: "7.5.4";
+	content: "7.7.3";
 }
 
 .v-generated-body {
@@ -54,6 +54,23 @@
 
 .FontAwesome {
 	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+}
+
+@font-face {
+	font-family: ThemeIcons;
+	src: url(../base/fonts/themeicons-webfont.eot);
+	src: url(../base/fonts/themeicons-webfont.eot?#iefix) format("embedded-opentype"), url(../base/fonts/themeicons-webfont.woff) format("woff"), url(../base/fonts/themeicons-webfont.ttf) format("truetype"), url(../base/fonts/themeicons-webfont.svg) format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.ThemeIcons {
+	font-family: ThemeIcons;
 	font-style: normal;
 	font-weight: normal;
 	-webkit-font-smoothing: antialiased;
@@ -296,10 +313,6 @@
 
 .v-ie .demo .v-nativebutton-link {
 	padding: 0;
-}
-
-.demo .v-checkbox {
-	display: block;
 }
 
 .demo .v-checkbox, .demo .v-checkbox label, .demo .v-checkbox input, .demo .v-checkbox .v-icon {
@@ -1117,6 +1130,37 @@ body .demo.v-app .v-app-loading {
 	height: 0;
 }
 
+.demo .v-reconnect-dialog {
+	color: white;
+	top: 12px;
+	right: 12px;
+	max-width: 100%;
+	border-radius: 0;
+	-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+	padding: 10px;
+	background-color: #444;
+	text-align: center;
+}
+
+.demo .v-reconnect-dialog .text {
+	display: inline-block;
+	padding-left: 10px;
+}
+
+.demo .v-reconnect-dialog .spinner {
+	background-image: url(../base/common/img/reconnect-spinner.gif);
+	width: 31px;
+	height: 31px;
+	display: none;
+	vertical-align: middle;
+}
+
+.demo .v-reconnect-dialog.active .spinner {
+	display: inline-block;
+}
+
 .demo .v-vertical.v-margin-top, .demo .v-horizontal.v-margin-top {
 	padding-top: 12px;
 }
@@ -1891,6 +1935,7 @@ body .demo.v-app .v-app-loading {
 
 .demo .v-formlayout-errorcell, .demo .v-formlayout-captioncell {
 	width: 1px;
+	min-width: 1px;
 }
 
 .demo .v-formlayout-captioncell .v-caption {
@@ -2125,6 +2170,10 @@ body .demo.v-app .v-app-loading {
 	z-index: 5;
 }
 
+.demo .v-grid-sidebar.v-contextmenu.v-grid-sidebar-popup {
+	right: auto;
+}
+
 .demo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-button {
 	background: transparent;
 	border: none;
@@ -2136,6 +2185,10 @@ body .demo.v-app .v-app-loading {
 	line-height: 1;
 }
 
+.demo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-button[disabled] {
+	cursor: default;
+}
+
 .demo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-button::-moz-focus-inner {
 	border: 0;
 }
@@ -2143,7 +2196,7 @@ body .demo.v-app .v-app-loading {
 .demo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-button:after {
 	content: "\f0c9";
 	display: block;
-	font-family: FontAwesome, sans-serif;
+	font-family: ThemeIcons, sans-serif;
 	font-size: 10px;
 }
 
@@ -2173,6 +2226,8 @@ body .demo.v-app .v-app-loading {
 
 .demo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-content {
 	padding: 4px 0;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .demo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-content .gwt-MenuBar .gwt-MenuItem .column-hiding-toggle {
@@ -2181,7 +2236,7 @@ body .demo.v-app .v-app-loading {
 
 .demo .v-grid-cell {
 	background-color: #fff;
-	padding: 0 6px;
+	padding: 0 10px;
 	line-height: 20px;
 	text-overflow: ellipsis;
 }
@@ -2251,19 +2306,34 @@ body .demo.v-app .v-app-loading {
 }
 
 .demo .v-grid-header .sort-asc, .demo .v-grid-header .sort-desc {
-	padding-right: 18px;
+	padding-right: 22px;
 }
 
 .demo .v-grid-header .sort-asc:after, .demo .v-grid-header .sort-desc:after {
-	font-family: FontAwesome, sans-serif;
+	font-family: ThemeIcons, sans-serif;
 	content: "\f0de" " " attr(sort-order);
 	position: absolute;
-	right: 6px;
+	right: 10px;
 	font-size: 9px;
 }
 
 .demo .v-grid-header .sort-desc:after {
 	content: "\f0dd" " " attr(sort-order);
+}
+
+.demo .v-grid-column-resize-handle {
+	position: absolute;
+	width: 20px;
+	right: -10px;
+	top: 0px;
+	bottom: 0px;
+	cursor: col-resize;
+	z-index: 10;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .demo .v-grid-footer td {
@@ -2278,6 +2348,18 @@ body .demo.v-app .v-app-loading {
 
 .demo .v-grid-footer td:first-child {
 	border-left: none;
+}
+
+.demo .v-grid-header .v-grid-cell, .demo .v-grid-footer .v-grid-cell {
+	overflow: visible;
+}
+
+.demo .v-grid-column-header-content, .demo .v-grid-column-footer-content {
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 20px;
+	vertical-align: baseline;
 }
 
 .demo .v-grid-header-deco {
@@ -2341,6 +2423,10 @@ body .demo.v-app .v-app-loading {
 	box-shadow: 0 0 9px rgba(0, 0, 0, 0.2);
 }
 
+.demo .v-grid-editor.unbuffered .v-grid-editor-footer {
+	width: 100%;
+}
+
 .demo .v-grid-editor-cells {
 	position: relative;
 	white-space: nowrap;
@@ -2368,6 +2454,22 @@ body .demo.v-app .v-app-loading {
 	display: inline-block;
 }
 
+.demo .v-grid-editor-cells  > div .v-filterselect {
+	padding-left: 0;
+}
+
+.demo .v-grid-editor-cells  > div input[type="text"], .demo .v-grid-editor-cells  > div input[type="text"].v-filterselect-input, .demo .v-grid-editor-cells  > div input[type="password"] {
+	padding-left: 10px;
+}
+
+.demo .v-grid-editor-cells  > div input[type="text"]:not(.v-filterselect-input), .demo .v-grid-editor-cells  > div input[type="password"] {
+	padding-right: 5px;
+}
+
+.demo .v-grid-editor-cells  > div input[type="checkbox"] {
+	margin-left: 10px;
+}
+
 .demo .v-grid-editor-cells  > div .v-textfield, .demo .v-grid-editor-cells  > div .v-datefield, .demo .v-grid-editor-cells  > div .v-filterselect {
 	min-width: 100%;
 	max-width: 100%;
@@ -2376,16 +2478,20 @@ body .demo.v-app .v-app-loading {
 }
 
 .v-ie8 .demo .v-grid-editor-cells  > div .v-datefield-button {
-	margin-left: -30px;
+	margin-left: -37px;
 }
 
 .v-ie8 .demo .v-grid-editor-cells  > div .v-filterselect-button {
-	margin-left: -27px;
+	margin-left: -25px;
 }
 
 .demo .v-grid-editor-cells  > div .v-select, .demo .v-grid-editor-cells  > div .v-select-select {
 	min-width: 100%;
 	max-width: 100%;
+}
+
+.demo .v-grid-editor-cells  > div.not-editable.v-grid-cell {
+	float: none;
 }
 
 .demo .v-grid-editor-cells .error::before {
@@ -3023,10 +3129,29 @@ body .demo.v-app .v-app-loading {
 	border-collapse: collapse;
 	border: none;
 	vertical-align: top;
+	display: block;
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+.demo .v-filterselect-suggestmenu table > tbody, .demo .v-filterselect-suggestmenu table > tbody > tr, .demo .v-filterselect-suggestmenu table > tbody > tr > td {
+	display: block;
+	width: 100%;
+	float: left;
+	clear: both;
+	overflow-y: hidden;
 }
 
 .demo .v-filterselect-suggestmenu .gwt-MenuItem {
 	white-space: nowrap;
+	padding-left: 1px;
+	padding-right: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
 }
 
 .demo .v-filterselect-suggestmenu .gwt-MenuItem .v-icon {
@@ -5462,6 +5587,7 @@ body .demo.v-app .v-app-loading {
 
 .demo .v-formlayout-errorcell {
 	width: 13px;
+	min-width: 13px;
 }
 
 .demo .v-formlayout-cell .v-errorindicator {
@@ -5564,7 +5690,7 @@ body .demo.v-app .v-app-loading {
 }
 
 .demo .v-grid th.sort-asc, .demo .v-grid th.sort-desc {
-	padding-right: 22px;
+	padding-right: 26px;
 }
 
 .demo .v-grid th.sort-asc:after, .demo .v-grid th.sort-desc:after {
@@ -5591,6 +5717,10 @@ body .demo.v-app .v-app-loading {
 	border: none;
 	border-radius: 0;
 	background: transparent;
+}
+
+.v-ie8 .demo .v-grid-editor-cells > div .v-datefield-button {
+	margin-top: -2px;
 }
 
 .demo .v-grid-editor-cells > div .v-filterselect {
@@ -6090,7 +6220,7 @@ body .demo.v-app .v-app-loading {
 
 .demo .v-filterselect-suggestmenu .gwt-MenuItem {
 	padding: 1px 8px;
-	height: 16px;
+	min-height: 18px;
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;

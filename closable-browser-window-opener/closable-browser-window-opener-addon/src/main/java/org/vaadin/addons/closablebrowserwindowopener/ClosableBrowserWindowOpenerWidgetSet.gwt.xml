@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.7.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/1.7.0/distro-source/core/src/gwt-module.dtd">
+<module>
+	<inherits name="com.google.gwt.core.Core" />
+	<inherits name="com.google.gwt.user.UserAgent" />
+	<inherits name="com.vaadin.DefaultWidgetSet" />
+	<replace-with class="com.google.gwt.user.client.impl.WindowImplMozilla">
+		<when-type-is class="com.google.gwt.user.client.impl.WindowImpl" />
+		<when-property-is name="user.agent" value="gecko1_8" />
+	</replace-with>
+	<replace-with class="com.google.gwt.user.client.impl.WindowImplIE">
+		<when-type-is class="com.google.gwt.user.client.impl.WindowImpl" />
+		<any>
+			<when-property-is name="user.agent" value="ie8" />
+			<when-property-is name="user.agent" value="ie9" />
+			<when-property-is name="user.agent" value="ie10" />
+		</any>
+	</replace-with>
+	<set-configuration-property name="devModeRedirectEnabled"
+		value="true" />
+</module>
