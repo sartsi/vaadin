@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.vaadin.addons</groupId>
@@ -7,13 +9,14 @@
   <packaging>pom</packaging>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <aspectj.version>1.8.6</aspectj.version>
-    <vaadin.version>7.7.3</vaadin.version>
+    <aspectj.version>1.8.10</aspectj.version>
+    <vaadin.version>7.7.6</vaadin.version>
     <maven-compiler-plugin.version>3.0</maven-compiler-plugin.version>
     <maven-jar-plugin.version>2.3.1</maven-jar-plugin.version>
     <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
     <maven-surefire-plugin.version>2.14.1</maven-surefire-plugin.version>
-    <spring.version>4.3.3.RELEASE</spring.version>
+    <commons-io.version>2.5</commons-io.version>
+    <spring.version>4.3.5.RELEASE</spring.version>
   </properties>
   <build>
     <pluginManagement>
@@ -156,11 +159,17 @@
         <version>${vaadin.version}</version>
         <scope>provided</scope>
       </dependency>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>${commons-io.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <modules>
-    <module>x3dom-wrapper</module>
-    <module>native-select-ext</module>
+    <module>closable-browser-window-opener</module>
     <module>file-lazy-downloader</module>
+    <module>native-select-ext</module>
+    <module>x3dom-wrapper</module>
   </modules>
 </project>

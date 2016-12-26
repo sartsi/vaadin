@@ -29,7 +29,7 @@
 	}
 
 .v-vaadin-version:after {
-	content: "7.7.3";
+	content: "7.7.6";
 }
 
 .v-generated-body {
@@ -1849,6 +1849,8 @@ body .demo.v-app .v-app-loading {
 }
 
 .demo .v-escalator-body {
+	-ms-touch-action: none;
+	touch-action: none;
 	z-index: 0;
 	top: 0;
 }
@@ -2048,6 +2050,8 @@ body .demo.v-app .v-app-loading {
 }
 
 .demo .v-grid-body {
+	-ms-touch-action: none;
+	touch-action: none;
 	z-index: 0;
 	top: 0;
 }
@@ -2329,6 +2333,21 @@ body .demo.v-app .v-app-loading {
 	bottom: 0px;
 	cursor: col-resize;
 	z-index: 10;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.demo .v-grid-column-resize-simple-indicator {
+	position: absolute;
+	width: 3px;
+	top: 0px;
+	left: 10px;
+	z-index: 9001;
+	background: #fff;
+	box-shadow: 0px 0px 5px #000;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;

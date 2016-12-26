@@ -8,14 +8,10 @@
   </parent>
   <artifactId>x3dom-wrapper-demo</artifactId>
   <packaging>war</packaging>
-  <!-- <properties>
-    <aspectj.version>1.8.6</aspectj.version>
-  </properties> -->
   <dependencies>
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>2.4</version>
     </dependency>
     <!-- Spring dependencies -->
     <dependency>
